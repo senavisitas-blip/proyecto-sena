@@ -1,0 +1,131 @@
+/* ===== Variables: colores del SENA ===== */
+/* :root = el elemento raíz (html); aquí se guardan variables disponibles en toda la página */
+:root {
+  /* Variable con el verde institucional; se usa con var(--sena-verde) */
+  --sena-verde: #39a900;
+  /* Verde más oscuro, para el efecto al pasar el mouse */
+  --sena-verde-oscuro: #2d8500;
+  /* Azul oscuro, para el degradado y el pie de página */
+  --sena-azul: #00304d;
+/* Fin de las variables */
+}
+
+/* ===== Barra de navegación ===== */
+/* Selecciona los elementos con class="barra-sena" (el punto indica "clase") */
+.barra-sena {
+  /* Pinta el fondo de la barra con el verde SENA (usando la variable) */
+  background-color: var(--sena-verde);
+/* Fin de la regla */
+}
+
+/* ===== Portada ===== */
+/* Selecciona el elemento con class="portada" (el encabezado grande) */
+.portada {
+  /* Fondo degradado en diagonal (135°): empieza verde y termina azul */
+  background: linear-gradient(135deg, var(--sena-verde), var(--sena-azul));
+  /* Espacio interno: 5rem arriba y abajo, 0 a los lados */
+  padding: 5rem 0;
+/* Fin de la regla */
+}
+
+/* ===== Títulos de sección ===== */
+/* Selecciona los títulos h2 que tienen class="titulo-seccion" */
+.titulo-seccion {
+  /* Línea vertical verde de 6px a la izquierda del título */
+  border-left: 6px solid var(--sena-verde);
+  /* Separa el texto de la línea verde */
+  padding-left: .75rem;
+  /* Espacio debajo del título */
+  margin-bottom: 1rem;
+/* Fin de la regla */
+}
+
+/* ===== Tarjetas con efecto al pasar el mouse ===== */
+/* Selecciona las tarjetas con class="tarjeta" */
+.tarjeta {
+  /* Borde superior verde de 4px como decoración */
+  border-top: 4px solid var(--sena-verde);
+  /* Hace que los cambios de posición y sombra ocurran suavemente en 0.2 segundos */
+  transition: transform .2s, box-shadow .2s;
+/* Fin de la regla */
+}
+/* :hover = cuando el mouse está encima de la tarjeta */
+.tarjeta:hover {
+  /* Sube la tarjeta 5px (el valor negativo es hacia arriba) */
+  transform: translateY(-5px);
+  /* Sombra suave debajo: desplazamiento 0 horizontal, .5rem vertical, 1rem de difuminado, negro al 15% */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+/* Fin de la regla */
+}
+
+/* ===== Contador ===== */
+/* Selecciona el número grande del contador */
+.numero {
+  /* Tamaño de letra muy grande (4 veces el normal) */
+  font-size: 4rem;
+  /* Letra gruesa (700 = negrita) */
+  font-weight: 700;
+  /* Color verde SENA para el número */
+  color: var(--sena-verde);
+  /* Espacio pequeño entre el número y los botones */
+  margin-bottom: .5rem;
+/* Fin de la regla */
+}
+
+/* ===== Botón personalizado (extiende Bootstrap) ===== */
+/* Crea nuestro propio tipo de botón, igual que btn-primary pero verde SENA */
+.btn-sena {
+  /* Fondo verde SENA */
+  background-color: var(--sena-verde);
+  /* Letras blancas */
+  color: #fff;
+  /* Quita el borde por defecto */
+  border: none;
+/* Fin de la regla */
+}
+/* Estilo del botón cuando el mouse pasa por encima */
+.btn-sena:hover {
+  /* Cambia a un verde más oscuro */
+  background-color: var(--sena-verde-oscuro);
+  /* Mantiene las letras blancas (Bootstrap las cambiaría si no se indica) */
+  color: #fff;
+/* Fin de la regla */
+}
+
+/* ===== Pie de página ===== */
+/* Selecciona el footer con class="pie" */
+.pie {
+  /* Fondo azul oscuro */
+  background-color: var(--sena-azul);
+  /* Letras azul muy claro, legibles sobre el fondo oscuro */
+  color: #cfe3f0;
+/* Fin de la regla */
+}
+
+/* ===== Código QR ===== */
+/* Caja que rodea al QR */
+.qr-caja {
+  /* Fondo blanco: los QR necesitan fondo claro para escanearse bien */
+  background-color: #fff;
+  /* Espacio blanco alrededor del código (zona de silencio) */
+  padding: 10px;
+  /* Esquinas redondeadas */
+  border-radius: 10px;
+  /* Sombra suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+  /* Se ajusta al tamaño del QR */
+  width: fit-content;
+  /* Ancho máximo */
+  max-width: 100%;
+/* Fin de la regla */
+}
+/* La imagen del QR se adapta al ancho de su caja */
+.qr-caja img {
+  /* Nunca más ancha que la caja */
+  max-width: 100%;
+  /* Mantiene la proporción */
+  height: auto;
+  /* Quita el espacio extra bajo la imagen */
+  display: block;
+/* Fin de la regla */
+}

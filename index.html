@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- La línea de arriba le dice al navegador que este documento usa HTML5 (debe ir primero) -->
+<!-- Etiqueta raíz de la página; lang="es" indica que el contenido está en español -->
+<html lang="es">
+<!-- HEAD: información invisible de la página (configuración, título, estilos) -->
+<head>
+  <!-- Codificación de caracteres: permite tildes y la ñ sin símbolos raros -->
+  <meta charset="UTF-8">
+  <!-- Hace la página responsive: el ancho se ajusta al de la pantalla del celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título que se ve en la pestaña del navegador -->
+  <title>Mi primera página con Bootstrap | SENA</title>
+
+  <!-- 1. Bootstrap LOCAL (primero, para poder sobrescribirlo) -->
+  <!-- Carga el CSS de Bootstrap desde la carpeta bootstrap/css (sin internet) -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- 2. Nuestros estilos (después de Bootstrap) -->
+  <!-- Carga nuestro CSS; va después para que sus reglas ganen sobre las de Bootstrap -->
+  <link rel="stylesheet" href="css/estilos.css">
+<!-- Fin del head -->
+</head>
+<!-- BODY: todo lo que el usuario ve en pantalla -->
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN (componente Bootstrap) -->
+  <!-- navbar: barra de menú; navbar-expand-md: se despliega desde pantallas medianas; navbar-dark: letras claras; barra-sena: clase propia con el verde SENA -->
+  <nav class="navbar navbar-expand-md navbar-dark barra-sena">
+    <!-- container: centra el contenido y le pone márgenes laterales -->
+    <div class="container">
+      <!-- Nombre del sitio; fw-bold = negrita; href="#inicio" salta a la sección con id="inicio" -->
+      <a class="navbar-brand fw-bold" href="#inicio">SENA Front End</a>
+      <!-- Botón "hamburguesa" que solo aparece en celular; abre y cierra el menú -->
+      <!-- data-bs-toggle="collapse": Bootstrap lo trata como botón de plegar/desplegar -->
+      <!-- data-bs-target="#menu": indica qué elemento se pliega (el que tiene id="menu") -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <!-- Ícono de las tres rayitas del botón -->
+        <span class="navbar-toggler-icon"></span>
+      <!-- Cierra el botón -->
+      </button>
+      <!-- Contenedor del menú que se pliega en celular; id="menu" es el destino del botón -->
+      <div class="collapse navbar-collapse" id="menu">
+        <!-- Lista de enlaces; ms-auto = margen izquierdo automático, los empuja a la derecha -->
+        <ul class="navbar-nav ms-auto">
+          <!-- Cada li es un elemento del menú; el enlace salta a la sección con ese id -->
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <!-- Enlace que lleva a la sección de tarjetas -->
+          <li class="nav-item"><a class="nav-link" href="#tarjetas">Tarjetas</a></li>
+          <!-- Enlace que lleva a la sección del contador -->
+          <li class="nav-item"><a class="nav-link" href="#contador">Contador</a></li>
+          <!-- Enlace que lleva a la sección del formulario -->
+          <li class="nav-item"><a class="nav-link" href="#formulario">Formulario</a></li>
+          <!-- Enlace que lleva a la sección del código QR -->
+          <li class="nav-item"><a class="nav-link" href="#qr">Código QR</a></li>
+        <!-- Cierra la lista -->
+        </ul>
+      <!-- Cierra el menú plegable -->
+      </div>
+    <!-- Cierra el container -->
+    </div>
+  <!-- Cierra la barra de navegación -->
+  </nav>
+
+  <!-- ENCABEZADO -->
+  <!-- header: cabecera de la página; id="inicio" es el destino del enlace "Inicio"; portada = clase propia (fondo degradado); text-center = texto centrado; text-white = letras blancas -->
+  <header id="inicio" class="portada text-center text-white">
+    <!-- Centra y limita el ancho del contenido -->
+    <div class="container">
+      <!-- Título principal; display-4 = tamaño muy grande de Bootstrap; fw-bold = negrita -->
+      <h1 class="display-4 fw-bold">¡Hola, aprendiz SENA!</h1>
+      <!-- Párrafo destacado (lead = letra un poco más grande); strong = negrita semántica -->
+      <p class="lead">Esta página usa <strong>HTML</strong>, <strong>CSS</strong>,
+        <strong>JavaScript</strong> y <strong>Bootstrap local</strong>.</p>
+      <!-- Enlace con aspecto de botón: btn = botón, btn-light = color claro, btn-lg = grande -->
+      <a href="#tarjetas" class="btn btn-light btn-lg">Empezar</a>
+    <!-- Cierra el container -->
+    </div>
+  <!-- Cierra el header -->
+  </header>
+
+  <!-- main: contenido principal; container = centrado; my-5 = margen arriba y abajo -->
+  <main class="container my-5">
+
+    <!-- GRID + TARJETAS -->
+    <!-- section: bloque temático; id="tarjetas" es el destino del menú; mb-5 = margen inferior -->
+    <section id="tarjetas" class="mb-5">
+      <!-- Subtítulo de la sección; titulo-seccion es una clase propia (borde verde a la izquierda) -->
+      <h2 class="titulo-seccion">1. Grid y tarjetas</h2>
+      <!-- Instrucción para el aprendiz -->
+      <p>Cambia el tamaño de la ventana: las columnas se reacomodan solas.</p>
+      <!-- row: fila del grid de 12 columnas; g-4 = espacio (gap) entre columnas -->
+      <div class="row g-4">
+        <!-- Columna 1: 12 de 12 en celular, 6 de 12 en pantalla mediana (md), 4 de 12 en grande (lg) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <!-- card: tarjeta de Bootstrap; tarjeta = clase propia (borde verde); h-100 = misma altura que las demás -->
+          <div class="card tarjeta h-100">
+            <!-- Zona interna de la tarjeta con espaciado -->
+            <div class="card-body">
+              <!-- Título de la tarjeta -->
+              <h5 class="card-title">HTML</h5>
+              <!-- Texto de la tarjeta -->
+              <p class="card-text">Define la <strong>estructura</strong> de la página.</p>
+            <!-- Cierra card-body -->
+            </div>
+          <!-- Cierra la tarjeta -->
+          </div>
+        <!-- Cierra la columna 1 -->
+        </div>
+        <!-- Columna 2: mismos tamaños que la primera -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <!-- Tarjeta de CSS -->
+          <div class="card tarjeta h-100">
+            <!-- Contenido de la tarjeta -->
+            <div class="card-body">
+              <!-- Título -->
+              <h5 class="card-title">CSS</h5>
+              <!-- Descripción -->
+              <p class="card-text">Le da <strong>estilo</strong>: colores, espacios y tamaños.</p>
+            <!-- Cierra card-body -->
+            </div>
+          <!-- Cierra la tarjeta -->
+          </div>
+        <!-- Cierra la columna 2 -->
+        </div>
+        <!-- Columna 3: en pantalla mediana ocupa las 12 columnas (fila completa); en grande, 4 -->
+        <div class="col-12 col-md-12 col-lg-4">
+          <!-- Tarjeta de JavaScript -->
+          <div class="card tarjeta h-100">
+            <!-- Contenido de la tarjeta -->
+            <div class="card-body">
+              <!-- Título -->
+              <h5 class="card-title">JavaScript</h5>
+              <!-- Descripción -->
+              <p class="card-text">Agrega <strong>interactividad</strong> a la página.</p>
+            <!-- Cierra card-body -->
+            </div>
+          <!-- Cierra la tarjeta -->
+          </div>
+        <!-- Cierra la columna 3 -->
+        </div>
+      <!-- Cierra la fila -->
+      </div>
+    <!-- Cierra la sección de tarjetas -->
+    </section>
+
+    <!-- JAVASCRIPT: CONTADOR -->
+    <!-- Sección del contador; id="contador" es el destino del menú -->
+    <section id="contador" class="mb-5">
+      <!-- Subtítulo de la sección -->
+      <h2 class="titulo-seccion">2. JavaScript: un contador</h2>
+      <!-- Centra su contenido -->
+      <div class="text-center">
+        <!-- Número que JavaScript va a cambiar; id="numero" es como app.js lo encuentra -->
+        <p class="numero" id="numero">0</p>
+        <!-- Botón rojo (btn-danger); app.js lo identifica con id="btnRestar" -->
+        <button id="btnRestar" class="btn btn-danger">− Restar</button>
+        <!-- Botón gris (btn-secondary) para volver a 0 -->
+        <button id="btnReiniciar" class="btn btn-secondary">Reiniciar</button>
+        <!-- Botón verde (btn-success) para sumar -->
+        <button id="btnSumar" class="btn btn-success">+ Sumar</button>
+      <!-- Cierra el div centrado -->
+      </div>
+    <!-- Cierra la sección del contador -->
+    </section>
+
+    <!-- FORMULARIO + ALERTA -->
+    <!-- Sección del formulario; id="formulario" es el destino del menú -->
+    <section id="formulario" class="mb-5">
+      <!-- Subtítulo de la sección -->
+      <h2 class="titulo-seccion">3. Formulario</h2>
+      <!-- Fila del grid para controlar el ancho del formulario -->
+      <div class="row">
+        <!-- Columna: 8 de 12 en mediana, 6 de 12 en grande, para que no quede demasiado ancho -->
+        <div class="col-md-8 col-lg-6">
+          <!-- Formulario; id lo usa JS; novalidate desactiva los mensajes del navegador para usar los de Bootstrap -->
+          <form id="formSaludo" novalidate>
+            <!-- mb-3 = separación inferior entre campos -->
+            <div class="mb-3">
+              <!-- Etiqueta del campo; for="nombre" la une con el input que tiene id="nombre" -->
+              <label for="nombre" class="form-label">Tu nombre</label>
+              <!-- Campo de texto; form-control = estilo Bootstrap; placeholder = texto de ayuda; required = obligatorio -->
+              <input type="text" class="form-control" id="nombre" placeholder="Ej: Ana" required>
+              <!-- Mensaje de error; Bootstrap lo muestra solo cuando el input tiene la clase is-invalid -->
+              <div class="invalid-feedback">Por favor escribe tu nombre.</div>
+            <!-- Cierra el grupo del campo -->
+            </div>
+            <!-- Botón que envía el formulario; btn-sena = clase propia con el verde SENA -->
+            <button type="submit" class="btn btn-sena">Saludar</button>
+          <!-- Cierra el formulario -->
+          </form>
+          <!-- Espacio vacío donde JavaScript escribirá la alerta de bienvenida; mt-3 = margen superior -->
+          <div id="resultado" class="mt-3"></div>
+        <!-- Cierra la columna -->
+        </div>
+      <!-- Cierra la fila -->
+      </div>
+    <!-- Cierra la sección del formulario -->
+    </section>
+
+    <!-- CÓDIGO QR PARA VISITAR EL PROYECTO EN GITHUB -->
+    <!-- Sección del QR; id="qr" es el destino del menú -->
+    <section id="qr" class="mb-5">
+      <!-- Tarjeta de Bootstrap centrada; shadow-lg = sombra grande; p-4 = espacio interno -->
+      <div class="card shadow-lg p-4 text-center">
+        <!-- Título de la tarjeta -->
+        <h4 class="mb-3">Escanea para visitar este proyecto en GitHub</h4>
+        <!-- Caja donde JavaScript dibuja el QR; id="qrcode" es como app.js lo encuentra -->
+        <div id="qrcode" class="qr-caja mx-auto"></div>
+        <!-- Texto de ayuda -->
+        <p class="text-muted small mt-3 mb-0">Apunta la cámara de tu celular al código</p>
+      <!-- Cierra la tarjeta -->
+      </div>
+    <!-- Cierra la sección del QR -->
+    </section>
+
+  <!-- Cierra el contenido principal -->
+  </main>
+
+  <!-- footer: pie de página; pie = clase propia (fondo azul); text-center = centrado; py-3 = espacio arriba y abajo -->
+  <footer class="pie text-center py-3">
+    <!-- small: texto pequeño -->
+    <small>Ejemplo sencillo · Aprendices SENA · Bootstrap 5.3.8 local</small>
+  <!-- Cierra el footer -->
+  </footer>
+
+  <!-- 3. JavaScript: primero Bootstrap, luego nuestro script -->
+  <!-- Bootstrap JS (bundle incluye Popper): activa el menú plegable, modales, etc. Va al final para no frenar la carga de la página -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Librería local que genera códigos QR (qrcode-generator, licencia MIT); funciona sin internet -->
+  <script src="js/qrcode.js"></script>
+  <!-- Nuestro script: va después porque los elementos del HTML ya existen y Bootstrap ya está cargado -->
+  <script src="js/app.js"></script>
+<!-- Cierra el body -->
+</body>
+<!-- Cierra el documento HTML -->
+</html>
